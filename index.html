@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هاجر… أنا آسف</title>
+<meta name="description" content="صفحة اعتذار لهاجر">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23e5484d' d='M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z'/></svg>">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #e5e5e5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #525252;
+    --text-tertiary: #8a8a8a;
+    --danger: #e5484d;
+    --heart: #e5484d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161616;
+      --surface: #222222;
+      --border: #333333;
+      --text-primary: #f0f0f0;
+      --text-secondary: #c8c8c8;
+      --text-tertiary: #8a8a8a;
+      --danger: #f2555a;
+      --heart: #f2555a;
+    }
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Tahoma, "Noto Kufi Arabic", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 560px;
+    min-height: 100vh;
+    padding: 48px 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stage { width: 100%; transition: opacity .25s ease-out; }
+  .hidden { display: none; }
+  .fadein { animation: fadeIn .3s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  .kicker { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
+  h1 { font-size: 34px; font-weight: 600; margin-bottom: 16px; line-height: 1.2; }
+  h2 { font-size: 26px; font-weight: 600; margin-bottom: 12px; }
+  p { font-size: 17px; line-height: 1.9; color: var(--text-secondary); margin-bottom: 16px; }
+  .small { font-size: 15px; color: var(--text-tertiary); }
+  .q { font-size: 22px; color: var(--text-primary); margin-bottom: 20px; font-weight: 600; }
+
+  .btn {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform .15s ease-out;
+  }
+  .primary { background: var(--text-primary); color: var(--bg); }
+  .primary:active { transform: scale(.96); }
+  .ghost { background: var(--surface); color: var(--text-primary); border: 1px solid var(--border); }
+
+  .arena {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+  #noBtn.fleeing {
+    position: absolute;
+    transition: left .15s ease-out, top .15s ease-out;
+  }
+  .taunt { min-height: 24px; font-size: 15px; color: var(--danger); margin-top: 8px; }
+  .sig { font-size: 15px; color: var(--text-tertiary); margin-top: 24px; font-style: italic; }
+
+  .heart { position: absolute; bottom: -28px; pointer-events: none; animation: floatUp linear infinite; opacity: .45; }
+  @keyframes floatUp { to { transform: translateY(-100vh); opacity: 0; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div aria-hidden="true">
+    <svg class="heart" style="left:6%;width:16px;animation-duration:8s" viewBox="0 0 24 24"><path fill="var(--heart)" d="M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z"/></svg>
+    <svg class="heart" style="left:22%;width:12px;animation-duration:10s;animation-delay:1.5s" viewBox="0 0 24 24"><path fill="var(--heart)" d="M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z"/></svg>
+    <svg class="heart" style="left:48%;width:18px;animation-duration:9s;animation-delay:.8s" viewBox="0 0 24 24"><path fill="var(--heart)" d="M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z"/></svg>
+    <svg class="heart" style="left:70%;width:14px;animation-duration:11s;animation-delay:2.4s" viewBox="0 0 24 24"><path fill="var(--heart)" d="M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z"/></svg>
+    <svg class="heart" style="left:88%;width:10px;animation-duration:7s;animation-delay:.4s" viewBox="0 0 24 24"><path fill="var(--heart)" d="M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z"/></svg>
+    <svg class="heart" style="left:35%;width:13px;animation-duration:9.5s;animation-delay:3.2s" viewBox="0 0 24 24"><path fill="var(--heart)" d="M12 21s-7.5-4.9-9.7-9C.7 9.2 2.3 5.5 5.7 4.6c2-.6 4.1.1 5.3 1.8L12 8l1-1.6c1.2-1.7 3.3-2.4 5.3-1.8 3.4.9 5 4.6 3.4 7.4-2.2 4.1-9.7 9-9.7 9z"/></svg>
+  </div>
+
+  <div class="stage fadein" id="stage1">
+    <p class="kicker">رسالة اعتذار رسمية جداً جداً</p>
+    <h1>جرجورتي… أنا آسف</h1>
+    
+    <p class="small">مش هدافع عن نفسي ولا هقول كنت مقموص، أنا بس ندمان إني معملتش حاجة مهمة ليكي.</p>
+    <button class="btn primary" id="toQuestion" style="margin-top:8px">طيب… سامحيني؟</button>
+  </div>
+
+  <div class="stage hidden" id="stage2">
+    <h2>طيب دلوقتي قوليلي بصراحة</h2>
+    <p class="q">لسا زعلانه ولا لا؟</p>
+    <div class="arena" id="arena">
+      <button class="btn primary" id="yesBtn">أيوه، لسه زعلانه</button>
+      <button class="btn ghost" id="noBtn">لأ، مش زعلانه خالص</button>
+    </div>
+    <p class="taunt" id="taunt"></p>
+  </div>
+
+  <div class="stage hidden" id="stage3">
+    <h2>عارف والله</h2>
+    <p>حقك عليا يا هاجر… الريكورد والفيديو نوت اول ما انزل او اعرف اعملهم هعملهم  .</p>
+    <p class="small">وبعدين بلاش زعل من غير ما تقوليلي، أنا مش بعرف أخمن، أنا بس بعرف أعتذر.</p>
+    <p class="sig">— انا اسف بجد سامحيني بقا</p>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var stage1 = document.getElementById('stage1'),
+      stage2 = document.getElementById('stage2'),
+      stage3 = document.getElementById('stage3'),
+      arena  = document.getElementById('arena'),
+      noBtn  = document.getElementById('noBtn'),
+      taunt  = document.getElementById('taunt');
+
+  function show(el) {
+    el.classList.remove('hidden');
+    el.classList.add('fadein');
+  }
+
+  document.getElementById('toQuestion').addEventListener('click', function () {
+    stage1.classList.add('hidden');
+    show(stage2);
+  });
+
+  document.getElementById('yesBtn').addEventListener('click', function () {
+    stage2.classList.add('hidden');
+    show(stage3);
+  });
+
+  var phrases = ['ههه مش هتقدري', 'شدّي حيلك', 'قربتي بس!', 'الزرار ده سريع', 'استسلمي أريح', 'مفيش لأ هنا'];
+  var pi = 0, dodges = 0;
+
+  function dodge() {
+    var r = arena.getBoundingClientRect(),
+        b = noBtn.getBoundingClientRect(),
+        pad = 8;
+    noBtn.classList.add('fleeing');
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = (pad + Math.random() * Math.max(0, r.width  - b.width  - pad * 2)) + 'px';
+    noBtn.style.top  = (pad + Math.random() * Math.max(0, r.height - b.height - pad * 2)) + 'px';
+    noBtn.textContent = phrases[pi++ % phrases.length];
+    dodges++;
+    if (dodges === 1)      { taunt.textContent = 'الزرار ده خايف منك شوية…'; }
+    else if (dodges > 5)   { taunt.textContent = 'خلاصيها وبوسيني'; }
+  }
+
+  noBtn.addEventListener('pointerenter', dodge);
+  noBtn.addEventListener('pointerdown',  function (e) { e.preventDefault(); dodge(); });
+  noBtn.addEventListener('touchstart',   function (e) { e.preventDefault(); dodge(); }, { passive: false });
+  noBtn.addEventListener('click',        function (e) { e.preventDefault(); dodge(); });
+  noBtn.addEventListener('focus', dodge);
+})();
+</script>
+</body>
+</html>
